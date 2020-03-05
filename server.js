@@ -121,7 +121,7 @@ const initiateAPI = () => {
             };
             return hbsObject;
           }
-        }, 15000);
+        }, 250000);
       });
   } catch (error) {
     hbsObject = {
