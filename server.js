@@ -1,7 +1,7 @@
 require("dotenv").config();
 const refresh = require("./refreshToken");
 // for getting initial access token... run getAccessToken.getToken("TOKENHERE"). Look in file to view instructions on getting first Access Code.
-// const getAccessToken = require("./getAccessToken");
+const getAccessToken = require("./getAccessToken");
 const getReviews = require("./getReviews");
 const express = require("express");
 const wakeUpDyno = require("./wakeUpDyno"); // wakes up Heroku free tier dyno every 25 minutes, basically so the refresh tokens don't expire. We'll have to really think through how we implement refresh tokens on our servers...
@@ -25,6 +25,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 let hbsObject;
+
+getAccessToken.getToken("TdfdgCXC");
 
 const initiateAPI = () => {
   console.log("initializing");
@@ -132,11 +134,11 @@ const initiateAPI = () => {
   }
 };
 
-initiateAPI();
+// initiateAPI();
 
-app.get("/", function(req, res) {
-  res.render("index", hbsObject);
-});
+// app.get("/", function(req, res) {
+//   res.render("index", hbsObject);
+// });
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
