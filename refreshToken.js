@@ -1,5 +1,5 @@
 var request = require("request");
-
+var axios = require("axios");
 require("dotenv").config();
 
 let refreshToken = {
@@ -14,7 +14,9 @@ let refreshToken = {
       form: {
         grant_type: "refresh_token",
         client_id: `${process.env.CLIENT_ID}`,
-        client_secret: `${process.env.CLIENT_SECRET}`,
+        client_secret: `${process.env.API_SECRET}`,
+        // this may change
+        // refresh_token: "CWAUdQWUbjMI86ssqYsIO6pnAFNhhG0w"
         refresh_token: `${token}`
       }
     };
