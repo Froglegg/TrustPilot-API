@@ -26,7 +26,7 @@ app.set("view engine", "handlebars");
 
 let hbsObject;
 
-getAccessToken.getToken("TdfdgCXC");
+// getAccessToken.getToken("TdfdgCXC");
 
 const initiateAPI = () => {
   console.log("initializing");
@@ -134,11 +134,11 @@ const initiateAPI = () => {
   }
 };
 
-// initiateAPI();
+initiateAPI();
 
-// app.get("/", function(req, res) {
-//   res.render("index", hbsObject);
-// });
+app.get("/", function(req, res) {
+  res.render("index", hbsObject);
+});
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
