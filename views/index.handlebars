@@ -1,20 +1,44 @@
 <div class="jumbotron">
-        <h1>TrustPilot API POC</h1>
-    </div>
+    <h1>TrustPilot API POC</h1>
+</div>
 
 <div class="container">
-<div class="row">
+    <div class="row">
 
-<div class="col">
-    <h2>Some Reviews</h2>
-    <ul>
-        {{#each data}}
-        <li><p>{{text}}</p></li>
-        {{/each}}
-    </ul>
+        <div class="col">
+            <h2>Some Reviews</h2>
 
 
+            {{#each data}}
+            <br /><br />
+            <div class="row">
+                <div class="col pull-left">
+                    {{#each stars}}
+                    <em class="fa fa-star fa-2x"></em>
+                    {{/each}}
+                </div>
+                <div class="col pull-right">
+                    <p style="font-size:1em;">{{createdAt}} | Phone Insurance</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="section-title">{{title}}</p>
+                    <p class="section-content">{{text}}
+                    </p>
+                </div>
+            </div>
+            {{/each}}
+
+            <ul>
+                {{#each data}}
+                <li>
+                    <p>{{text}}</p>
+                </li>
+                {{/each}}
+            </ul>
+
+
+        </div>
+    </div>
 </div>
-</div>
-</div>
-{{!-- <script src="public.js"></script> --}}
