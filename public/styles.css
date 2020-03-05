@@ -1,4 +1,8 @@
 body {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
+.fa-star {
+  color: gold;
+  letter-spacing: 0.1em;
+}
