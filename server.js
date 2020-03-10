@@ -26,7 +26,7 @@ app.set("view engine", "handlebars");
 
 let hbsObject;
 
-// getAccessToken.getToken("TdfdgCXC");
+// getAccessToken.getToken("j4pGAhlN");
 
 const initiateAPI = () => {
   console.log("initializing");
@@ -123,7 +123,7 @@ const initiateAPI = () => {
             };
             return hbsObject;
           }
-        }, 250000);
+        }, 20000);
       });
   } catch (error) {
     hbsObject = {
